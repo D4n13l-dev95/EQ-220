@@ -1,5 +1,5 @@
 """
-Exemplo de uso de derivada de uma função em código python
+Exemple of derivative usage by bib. sympy 
 """
 
 import sympy as sp
