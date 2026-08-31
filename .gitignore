@@ -1,0 +1,39 @@
+# =========================
+# .gitignore para EQ220
+# Python + Fortran
+# =========================
+
+# --- Fortran ---
+# Executaveis (Windows, Linux e Mac)
+*.exe
+*.out
+*.app
+Fortran/build/
+
+# Modulos e Objetos compilados (Lixo de compilacao)
+*.mod
+*.smod
+*.o
+*.obj
+
+# --- Python ---
+# Caches de execucao do Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Ambientes virtuais (nunca envie para o GitHub)
+.env
+.venv
+env/
+venv/
+ENV/
+
+# Checkpoints do Jupyter Notebook (caso venha a usar)
+.ipynb_checkpoints/
+
+# --- Sistema Operacional ---
+# Arquivos ocultos do Windows e macOS
+.DS_Store
+Thumbs.db
+desktop.ini
