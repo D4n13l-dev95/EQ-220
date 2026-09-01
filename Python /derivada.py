@@ -3,6 +3,7 @@ Exemple of derivative usage by bib. sympy
 """
 
 import sympy as sp
+import numpy as np
 
 x = sp.symbols('x')
 
@@ -21,7 +22,6 @@ def df(x):  # Outra forma de definir de modo que se tem doois def e se chama cad
     return dy
 
 
-# Passa o símbolo 'x' para a função
 
 # Calcula a derivada normalmente
 derivada = sp.diff(f(x), x)
@@ -29,3 +29,4 @@ print(derivada)  # Resultado: 3*x**2 - sin(x)
 
 dy = df(x)
 print(df(x))
+ # Avalia a derivada em x=2
