@@ -1,6 +1,6 @@
 """
 Disciplina: EQ 220 - Métodos Numéricos
-Atividade: Projeto Computacional 1
+Atividade: Exercício Computacional 4
 Nome:
     Daniel Mussato Campiotti
 Data: 01/09/2026
