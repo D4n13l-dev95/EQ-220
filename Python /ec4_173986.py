@@ -98,41 +98,41 @@ for k in range(0, len(ls_root), 1):  # finding the roots in the intervals found
     print("Root finded: ", x_new)
     print("Number of iterations: ", i)
 
-# plotting the function and its derivative
+# plotting the function and its derivative if you like to!
 
-y_valores = [f(x) for x in interval]
-dy_valores = [df(x) for x in interval]
+# y_valores = [f(x) for x in interval]
+# dy_valores = [df(x) for x in interval]
 
-plt.figure(figsize=(10, 6))
+# plt.figure(figsize=(10, 6))
 
-plt.plot(interval, 
-         y_valores, 
-         label='f(x)'
-         )
+# plt.plot(interval, 
+#          y_valores, 
+#          label='f(x)'
+#          )
 
-plt.plot(interval, 
-         dy_valores, 
-         label="$df/dx$"
-         )
+# plt.plot(interval, 
+#          dy_valores, 
+#          label="$df/dx$"
+#          )
 
-plt.axhline(0,
-            color= 'black', 
-            linewidth=0.5
-            )
+# plt.axhline(0,
+#             color= 'black', 
+#             linewidth=0.5
+#             )
 
-plt.axvline(0, 
-            color='black', 
-            linewidth=0.5
-            )
+# plt.axvline(0, 
+#             color='black', 
+#             linewidth=0.5
+#             )
 
 
-plt.xlabel('$x$')
-plt.ylabel('$y$')
+# plt.xlabel('$x$')
+# plt.ylabel('$y$')
 
-plt.title('$Function\;and\; Derivative$')
+# plt.title('$Function\;and\; Derivative$')
 
-plt.grid(True)
+# plt.grid(True)
 
-plt.legend()
+# plt.legend()
 
-plt.show()
+# plt.show()
