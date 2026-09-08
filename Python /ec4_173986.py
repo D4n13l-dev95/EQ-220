@@ -138,6 +138,7 @@ for k in range(0, len(ls_root_sec) - 1, 1):  # finding the roots in the interval
     # print(k, ls_root_sec[k])
 
     erro = 1.0e0
+    
 
     while (erro > tolerance):   
 
