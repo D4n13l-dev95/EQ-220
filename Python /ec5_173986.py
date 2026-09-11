@@ -41,7 +41,7 @@ while (h < n and k < n):
     h += 1
     k += 1
 
-# --- 2. PROCEDIMENTO SUBSTITUIÇÃO REVERSA ---
+# substituição reversa
 x = [0.0] * n
 x[n - 1] = vetor[n - 1] / matriz[n - 1][n - 1]
 
@@ -56,7 +56,7 @@ while (i >= 0):
     x[i] = (vetor[i] - s) / matriz[i][i]
     i -= 1
 
-# --- RESULTADOS ---
+# resultados
 print("\nMatriz Triangularizada:")
 for linha in matriz:
     print([round(v, 4) for v in linha])
