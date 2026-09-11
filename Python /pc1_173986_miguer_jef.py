@@ -31,14 +31,18 @@ nist_data = {
 
 # a e b para temp. crítica (eq. (2) do pc_1)
 def calc_ab(Tc, Pc):
+
     a = 27 * R**2 * Tc**2 / (64 * Pc)
     b = R * Tc / (8 * Pc)
+
     return a, b
 
 # A e B do eq. (6) depndentes de a e b 
 def calc_AB(P, T, a, b):
+
     A = a * P / (R**2 * T**2)
     B = b * P / (R * T)
+
     return A, B
 
 # eq. de van der Walls
@@ -58,8 +62,11 @@ def dF(Z, A, B):
 
 # definação da fugacidade para qq. Z_liq ou Z_vap, basta camaá-los na função
 def phi(Z, A, B):
+
     ln_phi = Z - 1 - np.log(Z - B) - A / Z
-    return np.exp(ln_phi)
+    phi = np.exp(ln_phi)
+
+    return phi
 
 
 ### listas ###
@@ -79,25 +86,4 @@ valor_a, valor_b = calc_ab(Tc, Pc)
 # print(valor_a, valor_b)
 i = 0
 # inicilaização de A e B
-
-ls_raizes = []
-for temperatura in ls_T:
-    for pressao in ls_P:
-
-        valor_A, valor_B = calc_AB(pressao, temperatura, valor_a, valor_b)
-
-        raizes_desse_ponto = []
-        for z in range(len(ls_Z) - 1):
-            Z1 = ls_Z[z]
-            Z2 = ls_Z[z + 1]
-            F1 = F(Z1, valor_A, valor_B)
-            F2 = F(Z2, valor_A, valor_B)
-            if F1 * F2 < 0:
-                raizes_desse_ponto.append((Z1, Z2))
-
-        ls_raizes.append(raizes_desse_ponto)
-
-print(len(ls_raizes))
-
-        # Valor de Z 
-
+s
