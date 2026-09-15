@@ -50,7 +50,7 @@ while (i >= 0):
     s = 0.0
     j = i + 1
     while (j < n):
-        s = s + matriz[i][j] * x[j]
+        s += matriz[i][j] * x[j]
         j += 1
         
     x[i] = (vetor[i] - s) / matriz[i][i]
