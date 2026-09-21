@@ -5,7 +5,7 @@ Atividade: Projeto Computacional 1
 
 Nome:
 
-    Daniel Mussato Campiotti
+    Daniel Mussato Campiotti (173986)
 
     Jeferson dos Santos Teixeira (238206)
 
@@ -21,7 +21,7 @@ Descrição: Determinação da pressão de saturação da água através da
     A escolha do P_sat deu-se pela aplicação do regula falsi
     a condição de equilíbrio líquido-vapor é:
         phi_liq = phi_vap
-    O cotejo com os dados experimentais do NIS, foi através do plot dum gráfico.
+    O cotejo com os dados experimentais do NIST, foi através do plot dum gráfico.
 """
 
 import numpy as np
