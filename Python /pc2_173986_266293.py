@@ -25,11 +25,11 @@ Disciplina: Métodos Numéricos - EQ220
 
 import numpy as np
 import matplotlib.pyplot as plt
-
+from matplotlib.ticker import MaxNLocator
 
 # Parâmetros físicos iniciais e constantes:
 
-# Áreas[m²]
+# Área [m²]
 A = 1.0 
 A_menor = A / 2
 
@@ -59,7 +59,12 @@ R5 = 0.02 / (5*A)
 
 
 # Definindo as funções necessaria para implementação do codigo.
+
 def f(T):
+    '''
+    Definição do vetor solução.
+    '''
+    
     T0, T1, T2, T3, T4, T5 = T
 
     # Existem duas funções relacionadas às outras, i.e.:
@@ -113,6 +118,7 @@ def Inverso_J(T):
 
 # Chute inicial
 T0 = np.array([390.0, 380.0, 360.0, 340.0, 320.0, 310.0])
+
 # É de se esperar que a temperatura decaia, por razões termodinâmicas! Daí a razão de escolher esse intervalo descrescente.
 
 tolerancia = 1e-6
@@ -120,8 +126,9 @@ tolerancia = 1e-6
 
 # Método de Newton Multidimensional
 def Newton(f, T0, tol=1e-6):
+
     T = T0.copy()
-    erro_newton = [np.linalg.norm(f(T), 2)]
+    erro_newton = [np.linalg.norm(f(T))]
 
     while (erro_newton[-1] >= tol):
         # Resolve o sistema linear J p = -f(T)
@@ -167,6 +174,8 @@ def Jacobiano_perturbado(f, T0, epsilon=1e-6):
         H[:, k] = (f_pert - f_inic)/epsilon
 
     return H
+
+
 
 # Método de Broyden para resolver o sistema de equações não lineares
 def Broyden(f, T0, tol=1e-6):
@@ -289,13 +298,25 @@ for tolerancia_atual in ls_tolerancia:
 print("Iterações de Newton:", ls_erro_newton)
 print("Iterações de Broyden:", ls_erro_broyden)
 
-
-# print gráfico N_iterações vs. tolerancia
+# Plot gráfico 
 plt.figure(figsize=(8, 5))
-plt.semilogx(ls_tolerancia, ls_erro_newton, 'o-',
-             label='Newton-Raphson', color='blue')
-plt.semilogx(ls_tolerancia, ls_erro_broyden, 's-',
-             label='Broyden', color='purple')
+plt.semilogx(ls_tolerancia, 
+             ls_erro_newton, 
+             'o-', 
+             label='Newton-Raphson', 
+             color='blue'
+             )
+
+plt.semilogx(ls_tolerancia, 
+             ls_erro_broyden, 
+             's-', 
+             label='Broyden', 
+             color='purple'
+             )
+
+# Força o eixo Y (Número de iterações) a mostrar apenas números inteiros
+plt.gca().yaxis.set_major_locator(MaxNLocator(integer=True))
+
 plt.xlabel('Tolerância')
 plt.ylabel('Número de iterações')
 plt.title('Influência da tolerância no número de iterações')
@@ -304,6 +325,7 @@ plt.legend()
 plt.gca().invert_xaxis()
 plt.tight_layout()
 plt.show()
+
 
 '''
 Os resultados obtidos mostram que os métodos de Newton multidimensional e de Broyden convergiram para praticamente a mesma solução do sistema não linear, apresentando resíduos finais da ordem de (10⁻¹¹). 

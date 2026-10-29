@@ -173,7 +173,7 @@ plt.scatter(X,
 
 plt.plot(x_plot,
          y_plot,
-         color='blue', 
+         color='black', 
          linestyle='-', 
          linewidth=2, 
          label=r"Polinômio de Lagrange $L(x) = \sum Y_i \cdot l_i(x)$")
@@ -191,6 +191,6 @@ plt.grid(True, linestyle='--', alpha=0.6)
 
 plt.tight_layout()
 
-plt.savefig("interpolacao_lagrange.png", dpi=300)
+plt.savefig("Graphics/interpolacao_lagrange.png", dpi=300)
 
 plt.show()
