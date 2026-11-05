@@ -48,5 +48,5 @@ ax.legend()
 
 os.makedirs("Graphics", exist_ok=True)
 plt.tight_layout()
-plt.savefig("Graphics/projeto1_spline_scipy.png", dpi=300, bbox_inches="tight")
+plt.savefig("Graphics/spline_scipy.png", dpi=300, bbox_inches="tight")
 plt.show()
